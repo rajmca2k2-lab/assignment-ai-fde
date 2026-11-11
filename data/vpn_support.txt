@@ -1,0 +1,15 @@
+VPN Support Procedure
+
+If VPN is not connecting:
+
+1. Check your internet connection.
+2. Restart the VPN client.
+3. Verify your username and password.
+4. Check whether MFA authentication succeeds.
+5. Restart your laptop.
+
+If the problem continues, raise an incident
+with the IT Service Desk.
+
+VPN incidents should be assigned to
+the Network Support Team.

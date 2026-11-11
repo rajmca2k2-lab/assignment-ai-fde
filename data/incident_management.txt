@@ -1,0 +1,20 @@
+Incident Management SLA
+
+P1 - Critical Incident:
+Response time: 15 minutes.
+Resolution target: 4 hours.
+
+P2 - High Incident:
+Response time: 30 minutes.
+Resolution target: 8 hours.
+
+P3 - Medium Incident:
+Response time: 4 hours.
+Resolution target: 24 hours.
+
+P4 - Low Incident:
+Response time: 8 hours.
+Resolution target: 72 hours.
+
+Critical production outages must be
+escalated immediately to the IT Manager.
