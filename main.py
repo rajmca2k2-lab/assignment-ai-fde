@@ -2,7 +2,6 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-#from langchain_groq import GroqLLM
 from groq import Groq
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -33,6 +32,7 @@ for file_path in data_folder.glob('*.txt'):
     documents.extend(loader.load())
     print(f"Loaded {len(documents)} documents from {file_path}")
 
+
 # Split documents into chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = text_splitter.split_documents(documents)
@@ -46,9 +46,6 @@ vectorstore = FAISS.from_documents(chunks, embeddings)
 print("Created FAISS vector store with embeddings.")
 
 #initialize Groq LLM
-#groq_llm = GroqLLM(api_key=api_key)
-#llm = ChatGroq(llm=groq_llm, temperature=0.7)
-
 llm = ChatGroq(
     model_name="openai/gpt-oss-120b",  # Replace with your desired model
     temperature=0.7,
@@ -110,7 +107,7 @@ print("\n===== SIMPLE GROQ RAG APPLICATION =====")
 
 while True:
 
-    question = input("\nAsk your question (type exit): ")
+    question = input("\nPlease ask your query here (type exit to come out): ")
 
     if question.lower() == "exit":
         print("Application stopped.")
@@ -118,10 +115,10 @@ while True:
 
     answer, sources = ask_question(question)
 
-    print("\nAI ANSWER:")
+    print("\nSolution for the asked question:")
     print(answer)
 
-    print("\nRETRIEVED SOURCES:")
+    print("\nReferenced Sources:")
 
     for doc in sources:
         print(doc.metadata.get("source", "Unknown"))
